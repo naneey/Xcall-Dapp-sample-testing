@@ -21,11 +21,17 @@ deployJar {
             uri = 'https://lisbon.net.solidwallet.io/api/v3'
             nid = 0x2
         }
+        berlin {
+            uri = 'https://berlin.net.solidwallet.io/api/v3'
+            nid = 0x7
+        }
         local {
             uri = 'http://localhost:9082/api/v3'
             nid = 0x3
         }
     }
-//    keystore = scoreTest.default.keyStore
-//    password = scoreTest.default.resolvedKeyPassword
+//    keystore = path/to/keystore
+//    password = keystorePass
+    parameters {
+    }
 }
