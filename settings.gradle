@@ -1,0 +1,7 @@
+rootProject.name = 'Xcall-Dapp-Sample'
+
+include(
+
+        "IconDapp:dummy-score",
+
+)

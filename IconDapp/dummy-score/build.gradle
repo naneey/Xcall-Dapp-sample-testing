@@ -1,0 +1,31 @@
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    compileOnly 'foundation.icon:javaee-api:0.9.4'
+}
+
+optimizedJar {
+    mainClassName = 'com.xcall.test.dummy.score.DummyScore'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+deployJar {
+    endpoints {
+        lisbon {
+            uri = 'https://lisbon.net.solidwallet.io/api/v3'
+            nid = 0x2
+        }
+        local {
+            uri = 'http://localhost:9082/api/v3'
+            nid = 0x3
+        }
+    }
+//    keystore = scoreTest.default.keyStore
+//    password = scoreTest.default.resolvedKeyPassword
+}
