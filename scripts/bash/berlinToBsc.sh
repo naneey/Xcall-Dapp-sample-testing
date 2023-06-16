@@ -58,10 +58,10 @@ txresult $(cat $tx/sendDAPPMessage.icon) | jq -r . | tee tx/CallMessageLog
 
 # search for CallMessage event log on BXCALL with the sn extracted above
 # The 'CallMessage' will have reqId use this in method below
-#reqId=303
-#echo ">>>>>> executeCall on bsc xCALL with the reqId"
-# you can do this from browser
-# https://testnet.bscscan.com/address/0x6193c0b12116c4963594761d859571b9950a8686#writeContract
+reqId=303
+echo ">>>>>> executeCall on bsc xCALL with the reqId"
+ you can do this from browser
+ https://testnet.bscscan.com/address/0x6193c0b12116c4963594761d859571b9950a8686#writeContract
 
 # check 'CallExecuted' on destination chain
 
@@ -74,22 +74,19 @@ txresult $(cat $tx/sendDAPPMessage.icon) | jq -r . | tee tx/CallMessageLog
 # same as rollback but should include RollbackMessage eventlog
 
 # now executeRollback on berlin xCALL contract with the sn
-#goloop rpc sendtx call --to cxf4958b242a264fc11d7d8d95f79035e35b21c1bb  \
-#--method executeRollback \
-#--key_store /home/aanya/keystores/test.json \
-#--key_password gochain \
-#--nid 0x7 \
-#--step_limit 10000000000 \
-#--uri https://berlin.net.solidwallet.io/api/v3/icon_dex \
-#--param _sn=0x198 | jq -r . | tee tx/executeRollback.icon
+goloop rpc sendtx call --to cxf4958b242a264fc11d7d8d95f79035e35b21c1bb  \
+--method executeRollback \
+--key_store /home/aanya/keystores/test.json \
+--key_password gochain \
+--nid 0x7 \
+--step_limit 10000000000 \
+--uri https://berlin.net.solidwallet.io/api/v3/icon_dex \
+--param _sn=0x198 | jq -r . | tee tx/executeRollback.icon
 
 # verify the rollback data received on berlin dAPP 'RollbackDataReceived'
 
 # verify rollback executed on berlin xCAll 'RollbackExecuted'
-###################################################DONE
 
-
-#
 #goloop rpc sendtx call --to cxf4958b242a264fc11d7d8d95f79035e35b21c1bb  \
 #--method executeCall \
 #--key_store /home/aanya/keystores/test.json \
@@ -98,10 +95,5 @@ txresult $(cat $tx/sendDAPPMessage.icon) | jq -r . | tee tx/CallMessageLog
 #--step_limit 10000000000 \
 #--uri https://berlin.net.solidwallet.io/api/v3/icon_dex \
 #--param _reqId=0x132 | jq -r . | tee tx/excuteCall.icon
-
-
-
-# TODO: THE DUMMY SCORE IS SET
-# now just do the transaction
 
 
