@@ -1,0 +1,130 @@
+SEPOLIA ADDRESS
+dapp:0xfC90D1BEc8d9573049f970cC3cC02b51512be7fa
+xcall:0x9B68bd3a04Ff138CaFfFe6D96Bc330c699F34901
+
+BSC ADDRESS
+dapp:0x3938907c7759323491c737a3f9fb4a20cefecc9e
+xcall:0x6193c0b12116c4963594761d859571b9950a8686
+
+######################################## CASE 1: SEPOLIA TO BSC WITH ROLLBACK DATA NO ROLLBACK #########################
+# query fee for xCall in sepolia
+params={
+    _net:'0x61.bsc',
+    _rollback:'0x1'
+}
+
+Return -> 1953518843859042
+
+# sendMessage from Dapp
+params={
+   _to: 'btp://0x61.bsc/0x3938907c7759323491c737a3f9fb4a20cefecc9e' /
+   _data: '0x6d65737361676546726f6d5365706f6c6961544f42736377'
+   '_rollback':'0x77697468526f6c6c4261636b'
+}
+https://sepolia.etherscan.io/tx/0x7d8a1d043e6d7c278691235a252dbd3b3a195321d2070736fe3171fa38979cd6
+sent at 4:19PM
+
+# verify the eventLog CallMessageSent in xCall Sepolia
+sn=92
+
+# search the eventLog CallMessage in xCall bsc
+rq=312
+received at 4:34PM
+
+# invoke executeCall on bsc with rq bsc
+
+
+# verify the eventLog CallExecuted on bsc with that reqId
+https://testnet.bscscan.com/tx/0x8a47d50a4a6f3f7a789883ac25470c2bf588ab2026750b398ffb3c2e6043c1a3
+sent at = 10:58:59 AM +UTC
+
+# if there is rollback
+# check eventLog ResponseMessage on sepolia
+https://sepolia.etherscan.io/tx/0xcae2681fb1c005dd7901cb89c01e6252cb2e1e380d897d9a2630e2dbff2b5d69
+received at = 07:33:00 PM +UTC
+
+######################################## CASE 2: SEPOLIA TO BSC WITH ROLLBACK AND SHOULD ROLLBACK ######################
+
+# query fee for xCall in sepolia
+params={
+    _net:'0x61.bsc',
+    _rollback:'0x1'
+}
+
+Return -> 1953518843859042
+
+# sendMessage from Dapp
+params={
+   _to: 'btp://0x61.bsc/0x3938907c7759323491c737a3f9fb4a20cefecc9e' /
+   _rollback: '0x7365706f6c6961546f62736377697468726f6c6c6261636b616e6472657665727464617461'
+   '_data':'0x7265766572744d657373616765'
+}
+https://sepolia.etherscan.io/tx/0x07a32c8b7675c983984fe545b5b89229066e86d6fa79ad57849fdaeb10f505c7#eventlog
+
+# verify the eventLog CallMessageSent in xCall Sepolia
+sn=97
+TODO
+# search the eventLog CallMessage in xCall bsc
+rq=333
+
+
+# invoke executeCall on bsc with rq bsc
+https://testnet.bscscan.com/tx/0x64a9aba3039e0a5af5494f70cf0d0dd26e9aca058f2870e85f0705ac4151cfde#eventlog
+
+# verify the eventLog CallExecuted on bsc with that reqId
+
+
+# if there is rollback
+# check eventLog ResponseMessage on sepolia
+https://sepolia.etherscan.io/tx/0x5ceac999402d5a2ccdd21f3b5bbe511f1978bba812c5c8d5f986e92cdeb0fa61
+
+TODO ##################################################################################
+# if rollback with reverted Message
+# check eventLog RollbackMessage on sepolia
+sn=97
+
+# invoke rollback with that sn on sepolia
+https://sepolia.etherscan.io/tx/0xb5624907670f160827f82d31517c0c395875cf7b4bf686bed23166d067d207e3
+
+# verify eventlog RollbackDataReceived on dApp of sepolia
+
+# verify eventlog RollbackExecuted on sepolia
+
+
+######################################## CASE 3: SEPOLIA TO BSC WITHOUT ROLLBACK #######################################
+# query fee for xCall in sepolia
+params={
+    _net:'0x61.bsc',
+    _rollback:'0x0'
+}
+
+Return -> 1240959463989361
+
+# sendMessage from Dapp
+params={
+   _to: 'btp://0x61.bsc/0x3938907c7759323491c737a3f9fb4a20cefecc9e' /
+   _data: '0x7365706f6c6961736179696e6768656c6c6f746f627363'
+   _rollback: '0x'
+}
+https://sepolia.etherscan.io/tx/0xcb1a9c6d064e12971b9633b474b42727e20c118eaf710a01bab71bb13c12f8cc
+sent at 04:37:36 AM +UTC
+
+# verify the eventLog CallMessageSent in xCall Sepolia
+sn=95
+
+# search the eventLog CallMessage in xCall bsc
+rq=326
+received at  04:56:20 AM +UTC
+
+# invoke executeCall on bsc with rq bsc
+
+
+# verify the eventLog CallExecuted on bsc with that reqId
+https://testnet.bscscan.com/tx/0xcc45a5505b78ecd8cab7f229a6cbaa360f660895ea7a0335f9e12521aa858ddc
+sent at = 05:44:26 AM +UTC
+
+
+#######################TODO############################################
+ADD optional message in rollback for solidity code of dAPP
+
+

@@ -2,6 +2,8 @@ rootProject.name = 'Xcall-Dapp-Sample'
 
 include(
 
+        "IconDapp:dapp-sample",
         "IconDapp:dummy-score",
+        'Xcall',
 
 )

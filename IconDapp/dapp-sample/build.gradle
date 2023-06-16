@@ -1,0 +1,43 @@
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+dependencies {
+    implementation project(path: ':Xcall')
+    compileOnly("foundation.icon:javaee-api:0.9.4")
+
+    implementation "foundation.icon:javaee-scorex:0.5.4.1"
+
+    annotationProcessor("foundation.icon:javaee-score-client:0.10.3")
+    compileOnly("foundation.icon:javaee-score-client:0.10.3")
+}
+
+optimizedJar {
+    mainClassName = 'foundation.icon.btp.xcall.sample.DAppProxySample'
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+
+deployJar {
+    endpoints {
+        lisbon {
+            uri = 'https://lisbon.net.solidwallet.io/api/v3'
+            nid = 0x2
+        }
+        local {
+            uri = 'http://localhost:9082/api/v3'
+            nid = 0x3
+        }
+    }
+//    keystore = scoreTest.default.keyStore
+//    password = scoreTest.default.resolvedKeyPassword
+}
