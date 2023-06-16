@@ -25,7 +25,7 @@ message='74776f636f6e747261637473636f6e6563746564'
 goloop rpc sendtx call --to $DAPP_ADDRESS  \
     --method sendMessage \
     --key_store /home/aanya/keystores/test.json \
-    --key_password Icon@123 \
+    --key_password gochain \
     --nid 0x7 \
     --value $(cat $tx/xcallFee) \
     --step_limit 10000000000 \
@@ -38,7 +38,7 @@ goloop rpc sendtx call --to $DAPP_ADDRESS  \
 #goloop rpc sendtx call --to $DAPP_ADDRESS  \
 #    --method sendMessage \
 #    --key_store /home/aanya/keystores/test.json \
-#    --key_password Icon@123 \
+#    --key_password gochain \
 #    --nid 0x7 \
 #    --value $(cat $tx/xcallFee) \
 #    --step_limit 10000000000 \
@@ -77,7 +77,7 @@ txresult $(cat $tx/sendDAPPMessage.icon) | jq -r . | tee tx/CallMessageLog
 #goloop rpc sendtx call --to cxf4958b242a264fc11d7d8d95f79035e35b21c1bb  \
 #--method executeRollback \
 #--key_store /home/aanya/keystores/test.json \
-#--key_password Icon@123 \
+#--key_password gochain \
 #--nid 0x7 \
 #--step_limit 10000000000 \
 #--uri https://berlin.net.solidwallet.io/api/v3/icon_dex \
@@ -93,7 +93,7 @@ txresult $(cat $tx/sendDAPPMessage.icon) | jq -r . | tee tx/CallMessageLog
 #goloop rpc sendtx call --to cxf4958b242a264fc11d7d8d95f79035e35b21c1bb  \
 #--method executeCall \
 #--key_store /home/aanya/keystores/test.json \
-#--key_password Icon@123 \
+#--key_password gochain \
 #--nid 0x7 \
 #--step_limit 10000000000 \
 #--uri https://berlin.net.solidwallet.io/api/v3/icon_dex \

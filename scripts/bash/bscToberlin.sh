@@ -44,7 +44,7 @@ https://sepolia.etherscan.io/tx/0x30fe2694c078f9dd7e8a5e0c5ee268728cefbb5c020461
 goloop rpc sendtx call --to cxba0099b8912267842787dc0b3e40bf4c736585ee  \
     --method setDummyScoreAddress \
     --key_store /home/aanya/keystores/test.json \
-    --key_password Icon@123 \
+    --key_password gochain \
     --nid 0x7 \
     --step_limit 10000000000 \
     --uri https://berlin.net.solidwallet.io/api/v3/icon_dex \

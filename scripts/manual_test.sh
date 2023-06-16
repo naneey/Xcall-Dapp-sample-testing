@@ -17,7 +17,7 @@ goloop rpc call --to $XCALL \
 goloop rpc sendtx call --to $DAPP_ADDRESS  \
     --method sendMessage \
     --key_store /home/aanya/keystores/test.json \
-    --key_password Icon@123 \
+    --key_password gochain \
     --nid 0x7 \
     --value $(cat $tx/xcallFee) \
     --step_limit 10000000000 \
@@ -57,7 +57,7 @@ echo ">>>> check the CallMessage on destination chain"
 goloop rpc sendtx call --to cxf4958b242a264fc11d7d8d95f79035e35b21c1bb  \
 --method executeCall \
 --key_store /home/aanya/keystores/test.json \
---key_password Icon@123 \
+--key_password gochain \
 --nid 0x7 \
 --step_limit 10000000000 \
 --uri https://berlin.net.solidwallet.io/api/v3/icon_dex \

@@ -24,7 +24,7 @@ message='0x6d6573736167652c64656c697665726564'
 goloop rpc sendtx call --to $DAPP_ADDRESS  \
     --method sendMessage \
     --key_store /home/aanya/keystores/test.json \
-    --key_password Icon@123 \
+    --key_password gochain \
     --nid 0x7 \
     --value '17591602201192300288' \
     --step_limit 10000000000 \
