@@ -29,6 +29,7 @@ import score.annotation.Optional;
 import score.annotation.Payable;
 import scorex.util.ArrayList;
 
+import java.io.ByteArrayOutputStream;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -192,6 +193,18 @@ public class DAppProxySample implements CallServiceReceiver {
                 }
             }
             Context.println("The compiled data is: " + finalData + "the size is :" + finalData.size());
+
+            // list to array stream
+//            ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+//            for (byte[] byteArray : finalData) {
+//                try {
+//                    outputStream.write(byteArray);
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            byte[] finalByteArray = outputStream.toByteArray();
+
             MessageReceived(_from, _data);
         }
     }
