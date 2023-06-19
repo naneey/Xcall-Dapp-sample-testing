@@ -72,7 +72,7 @@ public class DAppProxySample implements CallServiceReceiver {
 
     @Payable
     @External
-    public void sendMessage(String _to, byte[] _data,boolean readDummyData,
+    public void sendMessage(String _to, byte[] _data,@Optional boolean readDummyData,
                             @Optional boolean multipleMessage, @Optional byte[] _rollback){
         // use either multipleMessage or readDummmyData
         List<byte[]> ff = new ArrayList<>();
