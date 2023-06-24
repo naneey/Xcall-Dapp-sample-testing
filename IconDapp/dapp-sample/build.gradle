@@ -33,8 +33,13 @@ deployJar {
             uri = 'https://lisbon.net.solidwallet.io/api/v3'
             nid = 0x2
         }
+        havah {
+            uri = 'https://btp.vega.havah.io/api/v3/icon_dex'
+            nid = 0x111
+        }
         berlin {
-            uri = 'https://berlin.net.solidwallet.io/api/v3'
+            uri = 'https://berlin.net.solidwallet.io/api/v3/icon_dex'
+//            to='cxba0099b8912267842787dc0b3e40bf4c736585ee'
             nid = 0x7
         }
         local {
@@ -42,9 +47,9 @@ deployJar {
             nid = 0x3
         }
     }
-//    keystore = path/to/keystore
-//    password = keystorePass
+    keystore = '/home/aanya/keystores/test.json'
+    password = 'Icon@123'
     parameters {
-        arg('_callService', '<xcall-contract-address>')
+        arg('_callService', 'cxf4958b242a264fc11d7d8d95f79035e35b21c1bb')
     }
 }

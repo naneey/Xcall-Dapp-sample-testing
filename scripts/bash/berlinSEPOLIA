@@ -1,0 +1,32 @@
+goloop rpc sendtx call --to cxba0099b8912267842787dc0b3e40bf4c736585ee  \
+    --method sendMessage \
+    --key_store /home/aanya/keystores/test.json \
+    --key_password Icon@123 \
+    --nid 0x7 \
+    --value 8755152753846150144 \
+    --step_limit 10000000000 \
+    --uri https://berlin.net.solidwallet.io/api/v3/icon_dex \
+    --param _to='btp://0xaa36a7.eth2/0x15386c21C5C3c8c22AC09e780a33AC9Ff1715962' \
+    --param _data='0x6265726c696e546f425343' | jq -r .
+
+https://tracker.berlin.icon.community/transaction/0x391b3a72c69b897ca5760067450c0fadb589eacd98d72a39919d760b8708c58d
+https://sepolia.etherscan.io/tx/0xb4c0d1ce3b164c60d5bc06e8e1efe0b06abee096d4c545def88061a64ef4befd
+
+
+
+
+#### two connected contracts
+
+goloop rpc sendtx call --to cxba0099b8912267842787dc0b3e40bf4c736585ee  \
+    --method sendMessage \
+    --key_store /home/aanya/keystores/test.json \
+    --key_password Icon@123 \
+    --nid 0x7 \
+    --value 8755152753846150144 \
+    --step_limit 10000000000 \
+    --uri https://berlin.net.solidwallet.io/api/v3/icon_dex \
+    --param _to='btp://0xaa36a7.eth2/0x15386c21C5C3c8c22AC09e780a33AC9Ff1715962' \
+    --param _data='0x6265726c696e546f5365706f6c6961436f6e6e6563746564' \
+    --param readDummyData=0x1| jq -r .
+
+https://tracker.berlin.icon.community/transaction/0xe0faa8a28e4823ab16faa92477e27e546668723f43e8eee1f339f2cbea8087b4
